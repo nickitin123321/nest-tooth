@@ -11,15 +11,15 @@ import { PrismaModule } from './modules/prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [
-    UsersModule,
-    ToothsModule,
-    DiseaseModule,
-    AuthModule,
-    PrismaModule,
-    ConfigModule.forRoot({ isGlobal: true }),
-  ],
-  controllers: [AppController, DiseaseController],
-  providers: [AppService, DiseaseService],
+	imports: [
+		UsersModule,
+		ToothsModule,
+		DiseaseModule,
+		AuthModule,
+		PrismaModule,
+		ConfigModule.forRoot({ isGlobal: true }),
+	],
+	controllers: [AppController, DiseaseController],
+	providers: [AppService, DiseaseService],
 })
 export class AppModule {}

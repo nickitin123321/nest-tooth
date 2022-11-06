@@ -5,20 +5,17 @@ import { MetadataKey } from '../../lib/variables';
 
 @Injectable()
 export class AccessTokenGuard extends AuthGuard('jwt') {
-  constructor(private readonly reflector: Reflector) {
-    super();
-  }
+	constructor(private readonly reflector: Reflector) {
+		super();
+	}
 
-  canActivate(context: ExecutionContext) {
-    const isPublic = this.reflector.get<boolean>(
-      MetadataKey.IS_PUBLIC,
-      context.getHandler(),
-    );
+	canActivate(context: ExecutionContext) {
+		const isPublic = this.reflector.get<boolean>(MetadataKey.IS_PUBLIC, context.getHandler());
 
-    if (isPublic) {
-      return true;
-    }
+		if (isPublic) {
+			return true;
+		}
 
-    return super.canActivate(context);
-  }
+		return super.canActivate(context);
+	}
 }

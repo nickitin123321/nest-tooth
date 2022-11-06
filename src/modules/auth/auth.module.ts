@@ -8,8 +8,8 @@ import { AccessTokenStrategy } from './strategies/accessToken.strategy';
 import { RefreshTokenStrategy } from './strategies/refreshToken.strategy';
 
 @Module({
-  imports: [UsersModule, PassportModule, JwtModule.register({})],
-  providers: [AuthService, AccessTokenStrategy, RefreshTokenStrategy],
-  controllers: [AuthController],
+	imports: [UsersModule, PassportModule, JwtModule.register({})],
+	providers: [AuthService, AccessTokenStrategy, RefreshTokenStrategy],
+	controllers: [AuthController],
 })
 export class AuthModule {}

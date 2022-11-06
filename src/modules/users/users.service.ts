@@ -4,9 +4,9 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly prismaService: PrismaService) {}
+	constructor(private readonly prismaService: PrismaService) {}
 
-  async findOne(email: string): Promise<User> {
-    return this.prismaService.user.findUniqueOrThrow({ where: { email } });
-  }
+	async findOne(email: string): Promise<User> {
+		return this.prismaService.user.findUniqueOrThrow({ where: { email } });
+	}
 }

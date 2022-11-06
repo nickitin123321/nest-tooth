@@ -3,7 +3,7 @@ import { ToothsController } from './tooths.controller';
 import { ToothsService } from './tooths.service';
 
 @Module({
-  controllers: [ToothsController],
-  providers: [ToothsService],
+	controllers: [ToothsController],
+	providers: [ToothsService],
 })
 export class ToothsModule {}
